@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
 			//compare password
 			if (bcrypt.compareSync(req.body.password, user.password)) {
 				//create token and send that token to clint as heder
-				const token = jwt.sign({ _id: user._id }, 'sgdjsghghjghj',exp: Math.floor(Date.now() / 1000) + (60 * 60));
+				const token = jwt.sign({ _id: user._id }, 'sgdjsghghjghj',{ expiresIn: '1h' });
 				//set this token to header
 				res.header('auth-token', token).send(token);
 			} else {
