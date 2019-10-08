@@ -39,7 +39,7 @@ app.use('/api/users', AuthRoute);
 app.use('/api/users', postRoute);
 
 //start server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
 	console.log(`Server started on potr:${port}`);
 });
