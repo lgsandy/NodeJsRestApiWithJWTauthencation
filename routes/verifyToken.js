@@ -5,7 +5,7 @@ module.exports = function(req, res, next) {
 	if (!token) return res.status(401).send('Access Denied');
 	// invalid token - synchronous
 	try {
-		const verifiedToken = jwt.verify(token, process.env.TOKEN_SECRET);
+		const verifiedToken = jwt.verify(token,'sgdjsghghjghj');
 		req.user = verifiedToken;
 		next();
 	} catch (err) {
